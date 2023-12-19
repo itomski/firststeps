@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <nav class="container">
+        <ul class="nav nav-underline">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/todos">Todos</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/form">Form</a></li>
+        </ul>
+    </nav>
+
+    <main class="container mt-5">
+
+        <div class="row">
+
+            <div class="col-6">
+
+                <form action="/save" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Beschreibung</label>
+                        <textarea name="description" cols="30" class="form-control"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="radio" name="done" value="true">
+                            <label class="form-check-label" for="done">
+                                Erledigt
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" name="done" value="false">
+                            <label class="form-check-label" for="done">
+                                Nicht erledigt
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Speichern</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
