@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+
+  <head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+    <title th:text="${title}"></title>
+  </head>
+
+<body>
+
+  <nav class="container" th:fragment="mainNav(cur)">
+    <ul class="nav nav-underline">
+      <li class="nav-item">
+        <a class="nav-link" th:classappend="${cur} == 'home' ? 'active' : ''" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:classappend="${cur} == 'todos' ? 'active' : ''" href="/todos">Todos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:classappend="${cur} == 'form' ? 'active' : ''" href="/form">Form</a>
+      </li>
+    </ul>
+  </nav>
+
+
+  <th:block th:fragment="foot">
+    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+  </th:block>
+
+</body>
+</html>

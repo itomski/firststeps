@@ -1,35 +1,22 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
 
-    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+    <head th:replace="~{fragments.html :: head('Startseite') }"></head>
 
-    <title>Document</title>
-</head>
-<body>
+    <body>
 
-    <nav class="container">
-        <ul class="nav nav-underline">
-            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/todos">Todos</a></li>
-            <li class="nav-item"><a class="nav-link" href="/form">Form</a></li>
-        </ul>
-    </nav>
+        <nav th:replace="~{fragments.html :: mainNav('home') }"></nav>
 
-    <main class="container mt-5">
+        <main class="container mt-5">
 
-        <div class="row">
+            <div class="row">
 
-            <div class="col">Startseite</div>
+                <div class="col">Startseite</div>
 
-        </div>
+            </div>
 
-    </main>
+        </main>
 
-    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
-</body>
+        <th:block th:replace="~{fragments.html :: foot}"></th:block>
+    </body>
 </html>

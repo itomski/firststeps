@@ -32,6 +32,14 @@ public class Todo {
         this.createdAt = LocalDateTime.now();
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -58,5 +66,9 @@ public class Todo {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

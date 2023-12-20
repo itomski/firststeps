@@ -1,24 +1,10 @@
 <!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{fragments.html :: head('Todoliste') }"></head>
 
-    <link rel="stylesheet" href="/webjars/bootstrap/5.3.2/css/bootstrap.min.css">
+    <body>
 
-    <title>Document</title>
-</head>
-<body>
-
-    <nav class="container">
-        <ul class="nav nav-underline">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="/todos">Todos</a></li>
-            <li class="nav-item"><a class="nav-link" href="/form">Form</a></li>
-        </ul>
-    </nav>
+    <nav th:replace="~{fragments.html :: mainNav('todos') }"></nav>
 
     <main class="container mt-5">
 
@@ -33,6 +19,7 @@
                             <th>Beschreibung</th>
                             <th>Datum</th>
                             <th>Status</th>
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
 
@@ -42,6 +29,10 @@
                             <td th:text="${todo.description}"></td>
                             <td th:text="${todo.createdAt}"></td>
                             <td th:text="${todo.done}"></td>
+                            <td>
+                                <a th:href="@{/edit/{id}(id=${todo.id})}" class="btn btn-warning">EDIT</a>
+                                <a th:href="@{/delete/{id}(id=${todo.id})}" class="btn btn-danger">DELETE</a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -52,6 +43,6 @@
 
     </main>
 
-    <script src="/webjars/bootstrap/5.3.2/js/bootstrap.min.js"></script>
+    <th:block th:replace="~{fragments.html :: foot}"></th:block>
 </body>
 </html>
